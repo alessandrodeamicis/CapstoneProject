@@ -7,13 +7,13 @@ namespace SGM
     [System.Serializable]
     public class TutorialData
     {
-        [JsonProperty] public bool IsDone;
+        [JsonProperty] public bool IsDone = false;
     }
 
     public static class S_SaveManager
     {
-
-        private static string _pathTutorial = "Assets/Saves/tutorial.txt";
+        private static string _pathSaves = "Saves";
+        private static string _pathTutorial = _pathSaves + "/tutorial.txt";
 
         public static void TutorialDone()
         {
@@ -26,6 +26,11 @@ namespace SGM
 
         public static bool IsTutorialDone()
         {
+            bool exists = System.IO.Directory.Exists(_pathSaves);
+
+            if (!exists)
+                System.IO.Directory.CreateDirectory(_pathSaves);
+
             if (File.Exists(_pathTutorial))
             {
                 string json = File.ReadAllText(_pathTutorial);
