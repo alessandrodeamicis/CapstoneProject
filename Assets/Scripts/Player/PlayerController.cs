@@ -7,9 +7,9 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float _speed = 8f;
     [SerializeField] private LayerMask groundLayerMask = 1 << 6;
-    [SerializeField] private LayerMask _enemiesLayer = 1 << 7;
     [SerializeField] private GameObject _attackPoint;
-    private SpriteRenderer _spriteRenderer;
+    [SerializeField] private GameObject _loseUI;
+    [SerializeField] private GameObject _pauseUI;
     private Rigidbody2D _rb;
     private Animator _animator;
     private PlayerLifeController _playerLifeController;
@@ -26,11 +26,11 @@ public class PlayerController : MonoBehaviour
     public float groundCheckRadius = .2f;
 
     public bool IsAlive => _isAlive;
+    public bool IsJumping => _isJumping;
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
         _playerLifeController = GetComponent<PlayerLifeController>();
         _playerLifeController.OnDeath.AddListener(Death);
     }
@@ -44,25 +44,29 @@ public class PlayerController : MonoBehaviour
             if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && _isGrounded) Jump();
 
             if (Input.GetKeyDown(KeyCode.P)) Attack();
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (_pauseUI.activeSelf)
+                {
+                    _pauseUI.SetActive(false);
+                }
+                else
+                {
+                    _pauseUI.SetActive(true);
+                }
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        if (_isAlive && _canMove) Move();
+        if (_isAlive && _canMove && S_SaveManager.IsTutorialDone()) Move();
     }
 
     private void Move()
     {
         float inputX = Input.GetAxis("Horizontal");
-        //Vector2 moveX = new Vector2(inputX * _speed * Time.fixedDeltaTime, transform.position.y);
-        //_rb.MovePosition(_rb.position + moveX);
-        //Vector2 targetPosition = new Vector2(
-        //    _rb.position.x + inputX * _speed * Time.fixedDeltaTime,
-        //    _rb.position.y
-        //);
-
-        //_rb.MovePosition(targetPosition);
 
         if (!_isGrounded)
             verticalSpeed += gravity * Time.fixedDeltaTime;
@@ -96,7 +100,6 @@ public class PlayerController : MonoBehaviour
 
         if (AudioManager.Instance != null) AudioManager.Instance.PlayJumpSound();
 
-        //_rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         verticalSpeed = jumpForce;
 
         _animator.SetTrigger("jump");
@@ -109,7 +112,7 @@ public class PlayerController : MonoBehaviour
 
     public void StartOfAnimationAttackEvent()
     {
-        //StartCoroutine(DisableMove());
+        AudioManager.Instance.PlayAttackSound();
         _canMove = false;
     }
 
@@ -134,18 +137,26 @@ public class PlayerController : MonoBehaviour
         _canMove = true;
     }
 
+    public void StartOfAnimationJumpEvent()
+    {
+        _isJumping = false;
+    }
+
+    public void EndOfAnimationJumpEvent()
+    {
+        _isJumping = true;
+    }
+
     private void Death()
     {
         _isAlive = false;
         _animator.SetBool("dead", true);
+
+        ShowLoseUI();
     }
 
-    IEnumerator DisableMove()
+    private void ShowLoseUI()
     {
-        _canMove = false;
-        Debug.Log(_canMove);
-        yield return new WaitForSeconds(2f);
-        _canMove = true;
-        Debug.Log(_canMove);
+        _loseUI.SetActive(true);
     }
 }

@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5920952299285236551
 Transform:
   m_ObjectHideFlags: 0
@@ -83,7 +83,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6287531996078998400}
   - component: {fileID: 6441497119141203321}
-  m_Layer: 0
+  - component: {fileID: 5336523799372471083}
+  m_Layer: 9
   m_Name: LeftSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,6 +147,22 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &5336523799372471083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184617840409818464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4fa8ed46fbb6c843af868d02646ca62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
+  _player: {fileID: 0}
+  playerMoveX: 6
+  _directionArrowUI: {fileID: 0}
 --- !u!1 &1709822512454624595
 GameObject:
   m_ObjectHideFlags: 0

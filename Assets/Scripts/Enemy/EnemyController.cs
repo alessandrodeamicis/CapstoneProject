@@ -1,3 +1,4 @@
+using SGM;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,18 +13,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject _lifePanel;
     private GameObject _player;
     private PlayerController _playerController;
-    private Rigidbody2D _rb;
     private Animator _animator;
     private EnemyLifeController _enemyLifeController;
-    private SpriteRenderer _spriteRenderer;
     private bool _isNearTheTarget;
     private bool _isAlive = true;
     void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
         _player = GameObject.FindGameObjectWithTag("Player");
         _playerController = _player.GetComponent<PlayerController>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _enemyLifeController = GetComponent<EnemyLifeController>();
         _enemyLifeController.OnEnemyDeath.AddListener(Death);
@@ -41,7 +38,7 @@ public class EnemyController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_playerController.IsAlive && _isAlive)
+        if (_playerController.IsAlive && _isAlive && S_SaveManager.IsTutorialDone())
         {
             CheckDirection();
 
@@ -83,8 +80,11 @@ public class EnemyController : MonoBehaviour
 
     private void CheckAnimations()
     {
-        _animator.SetBool("isMoving", !_isNearTheTarget && _playerController.IsAlive);
-        _animator.SetBool("isAttacking", _isNearTheTarget && _playerController.IsAlive);
+        if (S_SaveManager.IsTutorialDone())
+        {
+            _animator.SetBool("isMoving", !_isNearTheTarget && _playerController.IsAlive);
+            _animator.SetBool("isAttacking", _isNearTheTarget && _playerController.IsAlive);
+        }
     }
 
     private void Death()
@@ -93,6 +93,5 @@ public class EnemyController : MonoBehaviour
         _animator.SetBool("dead", true);
         PolygonCollider2D attackPointCollider = _attackPoint.GetComponent<PolygonCollider2D>();
         attackPointCollider.enabled = false;
-    //StartCoroutine(DisableAnimatorAfterDeath());
-}
+    }
 }

@@ -23,14 +23,15 @@ public class AudioManager : MonoBehaviour
 
     [Header("SFX Settings")]
     [SerializeField] private AudioClip _jumpSound;
-    [SerializeField] private AudioClip _slideSound;
+    [SerializeField] private AudioClip _attackSound;
+    [SerializeField] private AudioClip _hurtSound;
 
     [Header("Fade Settings")]
     [SerializeField] private float _fadeDuration = 1f;
 
     private bool _isFading = false;
 
-    void Awake() // <- gestisce l'implementazione del Singleton
+    void Awake()
     {
         if (Instance == null)
         {
@@ -47,11 +48,11 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        PlayMainMenuMusic(); // <- inizia con la musica del main menu
+        PlayMainMenuMusic();
     }
 
     #region Initialization
-    private void InitializeAudioSources() // <- se non sono assegnate nell'inspector, crea le AudioSource automaticamente
+    private void InitializeAudioSources()
     {
         if (_musicSource == null)
         {
@@ -122,6 +123,16 @@ public class AudioManager : MonoBehaviour
         if (_jumpSound != null) _sfxSource.PlayOneShot(_jumpSound);
     }
 
+    public void PlayAttackSound()
+    {
+        if (_attackSound != null) _sfxSource.PlayOneShot(_attackSound);
+    }
+
+    public void PlayHurtSound()
+    {
+        if (_hurtSound != null) _sfxSource.PlayOneShot(_hurtSound);
+    }
+
     #region Fade Coroutines
     private System.Collections.IEnumerator FadeIn(AudioSource audioSource, float duration)
     {
@@ -181,7 +192,7 @@ public class AudioManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode) // <- gestisce automaticamente il cambio di musica in base alla scena
+    private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
     {
         switch (scene.name.ToLower())
         {

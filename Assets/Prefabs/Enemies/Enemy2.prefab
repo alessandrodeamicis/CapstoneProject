@@ -95,7 +95,7 @@ PrefabInstance:
     - target: {fileID: 8086321742120157873, guid: c6d30db04448fed40b989899c1103518, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 010ac97e2b9d8ce42b580389aee018d3, type: 2}
+      objectReference: {fileID: 9100000, guid: eac993aa5a5f3d0418c8aff3f62d173e, type: 2}
     - target: {fileID: 8219937872869792155, guid: c6d30db04448fed40b989899c1103518, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
       value: 0.29672998
@@ -118,7 +118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8761257296135317248, guid: c6d30db04448fed40b989899c1103518, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

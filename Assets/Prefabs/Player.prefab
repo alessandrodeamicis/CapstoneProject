@@ -110,7 +110,6 @@ GameObject:
   - component: {fileID: 1056280662762469839}
   - component: {fileID: 293866117824621378}
   - component: {fileID: 1719175074143085546}
-  - component: {fileID: 5660516501617389742}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -274,10 +273,9 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  _enemiesLayer:
-    serializedVersion: 2
-    m_Bits: 128
   _attackPoint: {fileID: 3827062472469309264}
+  _loseUI: {fileID: 0}
+  _pauseUI: {fileID: 0}
   gravity: -9.8
   jumpForce: 4
   groundCheckOffset: 1.1
@@ -324,15 +322,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5660516501617389742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7815394060450248856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f1e06b0832194e4d9168b12fe8a81ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

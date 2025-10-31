@@ -5,47 +5,36 @@ using UnityEngine;
 namespace SGM
 {
     [System.Serializable]
-    public class SaveData
+    public class TutorialData
     {
-        //[JsonProperty] private Transform _playerPosition;
-
-        [JsonProperty] private int _currentLevel;
-        [JsonProperty] private int _characterChosen;
-        //[JsonProperty] private Weapon _weapon;
+        [JsonProperty] public bool IsDone;
     }
+
     public static class S_SaveManager
     {
 
-        private static string _pathSaveData = Application.persistentDataPath + "/save-data.txt";
+        private static string _pathTutorial = "Assets/Saves/tutorial.txt";
 
-        public static SaveData GetSaveData()
+        public static void TutorialDone()
         {
-            if (File.Exists(_pathSaveData))
+            TutorialData data = new TutorialData();
+            data.IsDone = true;
+
+            string json = JsonConvert.SerializeObject(data, Formatting.Indented);
+            File.WriteAllText(_pathTutorial, json);
+        }
+
+        public static bool IsTutorialDone()
+        {
+            if (File.Exists(_pathTutorial))
             {
-                try
-                {
-                    string stringSaveData;
-                    SaveData saveData;
-                    stringSaveData = File.ReadAllText(_pathSaveData);
-                    saveData = JsonConvert.DeserializeObject<SaveData>(stringSaveData);
-                    return saveData;
-                }
-                catch
-                {
-                    Debug.LogError("Qualcosa è andato storto.");
-                    return null;
-                }
+                string json = File.ReadAllText(_pathTutorial);
+                TutorialData data = JsonConvert.DeserializeObject<TutorialData>(json);
+
+                return data.IsDone;
             }
-            else { return null; }
+            else { return false; }
         }
 
-        public static void SaveSaveData()
-        {
-            SaveData saveData;
-            saveData = GetSaveData();
-
-            string stringLeaderboard = JsonConvert.SerializeObject(saveData, Formatting.Indented);
-            File.WriteAllText(_pathSaveData, stringLeaderboard);
-        }
     }
 }

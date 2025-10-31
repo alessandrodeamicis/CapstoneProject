@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7566658604317660011
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2307752770820343201, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_text
+      value: 'You can dodge an enemy attack jumping.
+
+        Press Space to jump'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307752770820343201, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_fontSize
+      value: 17.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307752770820343201, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_margin.y
+      value: 3.155445
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307752770820343201, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 17.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 605.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 106.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833005348058438956, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610501686127478869, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_Name
+      value: Tutorial Jump Panel Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610501686127478869, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411904999409259160, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 870.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411904999409259160, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 59.6902
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411904999409259160, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411904999409259160, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.31
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e0c3159622a3a0640a91d91b978ce37d, type: 3}

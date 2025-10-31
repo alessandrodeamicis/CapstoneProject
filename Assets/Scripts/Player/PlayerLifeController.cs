@@ -10,7 +10,6 @@ public class PlayerLifeController : MonoBehaviour
     [SerializeField] private int _maxHp = 20;
     [SerializeField] private bool _fullHpOnAwake = true;
     public UnityEvent<int, int> OnHpChanged;
-    //private PlayerController _playerController;
     public UnityEvent OnDeath;
     void Awake()
     {
@@ -22,7 +21,6 @@ public class PlayerLifeController : MonoBehaviour
 
     private void Start()
     {
-        //_playerController = GetComponent<PlayerController>();
     }
 
     public int CurrentHp => _currentHp;
@@ -41,7 +39,6 @@ public class PlayerLifeController : MonoBehaviour
             if(_currentHp == 0)
             {
                 OnDeath?.Invoke();
-                //SceneManager.LoadScene("LoseScene");
             }
         }
     }

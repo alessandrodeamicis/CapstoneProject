@@ -16,11 +16,17 @@ public class EnemyAttackPoint : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerLifeController playerLifeController = other.gameObject.GetComponent<PlayerLifeController>();
-            playerLifeController.AddHp(-_damageAttack);
+            PlayerController playerController = other.gameObject.GetComponent<PlayerController>();
+            if (!playerController.IsJumping)
+            {
+                PlayerLifeController playerLifeController = other.gameObject.GetComponent<PlayerLifeController>();
+                playerLifeController.AddHp(-_damageAttack);
 
-            Animator playerAnimator = other.gameObject.GetComponent<Animator>();
-            playerAnimator.SetTrigger("hurt");
+                Animator playerAnimator = other.gameObject.GetComponent<Animator>();
+                playerAnimator.SetTrigger("hurt");
+
+                AudioManager.Instance.PlayHurtSound();
+            }
         }
     }
 

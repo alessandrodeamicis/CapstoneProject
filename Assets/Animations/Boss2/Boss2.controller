@@ -193,7 +193,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 31b578d1609c1c74c8db35486f5e5649, type: 2}
+  m_Motion: {fileID: 7400000, guid: edb1d8796f5de4d4581048659047e186, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -219,7 +219,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e97823298d6812a41ad65bc2dd67f7fe, type: 2}
+  m_Motion: {fileID: 7400000, guid: 3d067ad49d37e9448a35dcf7f24fdc63, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -247,7 +247,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ef28bdad910817f4e9942d0811c0d15d, type: 2}
+  m_Motion: {fileID: 7400000, guid: 96afcd582d2894e49abaf8b47b685156, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -327,7 +327,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 664ae1d7e2d9d9a4ab6b6ce3461e5d5b, type: 2}
+  m_Motion: {fileID: 7400000, guid: cc0f39bef3098a745a15917ccedd992a, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -430,7 +430,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6b17a2027578c95469504cfb658540af, type: 2}
+  m_Motion: {fileID: 7400000, guid: 44a48793039daa440bf84754cfd6fe5b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -453,7 +453,7 @@ AnimatorStateMachine:
     m_Position: {x: 780, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -903505523525043688}
-    m_Position: {x: 530, y: 20, z: 0}
+    m_Position: {x: 540, y: 20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4650501902519501224}
     m_Position: {x: 560, y: 230, z: 0}
